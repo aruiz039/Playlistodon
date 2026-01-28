@@ -2,7 +2,7 @@
 
 Overview
 --------
-This repository is a small Python web application that creates a YouTube playlist from YouTube links found in Mastodon posts matching a supplied hashtag. The application pulls Mastodon posts on a configured instance and extracts YouTube URLs, then assembles them into a playlist on YouTube using the configured Google API credentials. The entry point is `app.py`. Frontend assets live in `static/` and server-rendered HTML templates live in `templates/`.
+This repository is a small Python web application that creates a YouTube playlist from YouTube links found in Mastodon posts matching a supplied hashtag. The application pulls Mastodon social media posts on a configured instance and extracts YouTube URLs, then assembles them into a playlist on YouTube using the configured Google API credentials. The entry point is `app.py`. Frontend assets live in `static/` and server-rendered HTML templates live in `templates/`.
 
 Project layout (important files)
 - `app.py` - application entry point (runs the web server / handles routes).
