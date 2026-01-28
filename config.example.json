@@ -1,0 +1,5 @@
+{
+  "mastodon_api_base_url": "https://mastodon.example.com",
+  "playlist_name": "myhashtag",
+  "playlist_privacy": "public"
+}

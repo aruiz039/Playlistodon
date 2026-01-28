@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlistodon</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Playlistodon</h1>
+            <p class="subtitle">Create YouTube playlists from Mastodon hashtags</p>
+        </header>
+
+        <main>
+            <form id="playlistForm" class="form-container">
+                <div class="form-group">
+                    <label for="playlistName">Playlist Name:</label>
+                    <input 
+                        type="text" 
+                        id="playlistName" 
+                        name="playlistName" 
+                        placeholder="e.g., TuesdayTracks"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="hashtag">Hashtag:</label>
+                    <input 
+                        type="text" 
+                        id="hashtag" 
+                        name="hashtag" 
+                        placeholder="e.g., TuesdayTracks"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="btn-submit">Create Playlist</button>
+            </form>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Processing... This may take a moment.</p>
+            </div>
+
+            <div id="result" class="result hidden">
+                <div class="result-content">
+                    <h2>Success!</h2>
+                    <p>Your playlist has been created and populated with videos.</p>
+                    
+                    <div class="result-details">
+                        <p><strong>Playlist Name:</strong> <span id="resultPlaylistName"></span></p>
+                        <p><strong>Videos Added:</strong> <span id="resultAdded"></span></p>
+                        <p><strong>Videos Skipped:</strong> <span id="resultSkipped"></span></p>
+                    </div>
+
+                    <div class="result-link">
+                        <a id="playlistLink" href="#" target="_blank" class="btn-link">
+                            Open Playlist on YouTube →
+                        </a>
+                    </div>
+
+                    <button type="button" class="btn-new" onclick="resetForm()">Create Another Playlist</button>
+                </div>
+            </div>
+
+            <div id="error" class="error hidden">
+                <h2>Error</h2>
+                <p id="errorMessage"></p>
+                <button type="button" class="btn-new" onclick="closeError()">Try Again</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>Playlistodon - Bridging Mastodon and YouTube</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
