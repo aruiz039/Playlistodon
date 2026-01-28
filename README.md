@@ -57,3 +57,5 @@ token.json
 token.secret
 youtube_credentials.json
 ```
+<img width="2840" height="1574" alt="image" src="https://github.com/user-attachments/assets/386ca3be-6b69-4d0c-b01e-0dd54f9fb8b2" />
+
